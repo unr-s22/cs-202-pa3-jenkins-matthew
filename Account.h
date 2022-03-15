@@ -1,3 +1,22 @@
+
+#ifndef ACCOUNT_H
+#define ACCOUNT_H
+
+
+class Accout {
+
+};
+
+#endif //ACCOUNT_H
+
+
+
+
+
+
+
+
+
 // The `Account` class will maintain a current balance, and have methods for making deposits and withdrawals. 
 //All transactions with the `Account` class must utilize the `Money` class.
 /*
