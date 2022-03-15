@@ -1,3 +1,19 @@
+
+#ifndef MONEY_H
+#define MONEY_H
+
+class Money {
+
+};
+
+#endif //MONEY_H
+
+
+
+
+
+
+
 /*
 .Money Class
 This class must store the its value in an integer that holds cents. It must include
