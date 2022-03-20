@@ -4,7 +4,8 @@
 
 int main() {
 
-
+    Money m(100, 10);
+    m.printMoney();
     return 0;
 }
 
