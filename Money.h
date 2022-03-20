@@ -1,17 +1,19 @@
 
 #ifndef MONEY_H
 #define MONEY_H
+#include <iostream>
 
 class Money {
-
+   private:
+        int m_dollars;
+        int m_cents;
+    public:
+        void setMoney(int dollars, int cents);
+        explicit Money(const int &dollars, const int &cents);
+        void printMoney();
 };
 
 #endif //MONEY_H
-
-
-
-
-
 
 
 /*
