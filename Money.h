@@ -1,7 +1,7 @@
-
 #ifndef MONEY_H
 #define MONEY_H
 #include <iostream>
+#include <sstream>
 
 class Money {
    private:
@@ -11,9 +11,12 @@ class Money {
         void setMoney(int dollars, int cents);
         explicit Money(const int &dollars, const int &cents);
         void printMoney();
+        friend ostream& operator << (ostream& os, const Money& money);
 };
 
 #endif //MONEY_H
+
+
 
 
 /*
