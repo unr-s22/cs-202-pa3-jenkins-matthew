@@ -10,6 +10,7 @@ void Money::setMoney(int dollars, int cents) {
     m_dollars = dollars;
     m_cents = cents;
 }
-void Money::printMoney() {
-    std::cout << "$" << m_dollars << "." << m_cents << std::endl;
+ostream& operator << (ostream& os, const Money& money) {
+    os<< "$" << m_dollars << "." << m_cents << std::endl;
+    return os;
 }
