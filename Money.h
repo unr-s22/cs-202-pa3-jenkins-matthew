@@ -1,19 +1,23 @@
 #ifndef MONEY_H
 #define MONEY_H
 #include <iostream>
-#include <sstream>
+using namespace std;
 
 class Money {
-   private:
-        int m_dollars;
-        int m_cents;
+    private:
+        int month;
+        int day;
     public:
-        void setMoney(int dollars, int cents);
-        explicit Money(const int &dollars, const int &cents);
-        void printMoney();
-        friend ostream& operator << (ostream& os, const Money& money);
+        Money(int m, int d) {
+            month = m;
+            day = d;
+        }
+        friend ostream& operator << (ostream& os, const Money& moneyAmount);
 };
-
+ostream& operator << (ostream& os, const Money& moneyAmount) {
+    os << "$" << moneyAmount.month << "." << moneyAmount.day;
+    return os;
+}
 #endif //MONEY_H
 
 
