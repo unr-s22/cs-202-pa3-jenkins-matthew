@@ -1,31 +1,90 @@
+//
+//Edited on 3/24/2022
+//
+
 #include <iostream>
 #include "Money.h"
 #include "Account.h"
 
-int main() {
+using namespace std;
 
-    Money m(100, 10);
-    
+int main() {
+	//balance set up
+	Money m(300, 23);
+	Account account(m);
+	//Deposits in order $200.00, $300.24, $501.22
+	Money a(200,00);
+	Money b(300,24);
+	Money c(501,22);
+	account.makeDeposit(a);
+	account.makeDeposit(b);
+	account.makeDeposit(c);
+	cout << account << endl;
+	//Withdrawals in order $300.10, $201.34
+	Money d(300,10);
+	Money e(201,34);
+	account.makeWithDrawal(d);
+	account.makeWithDrawal(e);
+	cout << account << endl;
+	//Code to verify that the relational operators are working correctly
+	if(m > a){
+		cout << m << "is greater than " << a << endl;
+	} else {
+		cout << m << "is not greater than " << a << endl;
+	}
+	
+	if(m < a){
+		cout << m << " is less than " << a << endl;
+	} else {
+		cout << m << " is not less than " << a << endl;
+	}
+	
+	if(m == b){
+		cout << m << " is equal to " << b << endl;
+	} else {
+		cout << m << " is not equal to " << b << endl;
+	}
+	
+	if(m != c){
+		cout << m << " is not eqaul to " << c << endl;
+	} else {
+		cout << m << " is not not equal to " << c << endl;
+	}
+	
+	if(m >= d){
+		cout << m << " is greater than or equal to " << d << endl;
+	} else {
+		cout << m << " is not greater than or equal to " << d << endl;
+	}
+	
+	if(m <= c){
+		cout << m << " is less than or equal to " <<  c << endl;
+	} else {
+		cout << m << " is not less than or equal to " << c << endl;
+	}
+
     return 0;
 }
 
-/*
-In your `main` function in `main.cpp`,
 
-* Create an account with a starting balance of $300.23
-* Print the account to the terminal using the overloaded << operator (i.e., `std::cout << account << std::endl`)
-* Deposit into the account, in order, $200.00, $300.24, and $501.22
-* Print the account to the terminal. (Verify that the sum is correct)
-* Withdraw, in order, $300.10, $201.34 and again print the account to the terminal.
-* Write code to verify that your relational operators are working correctly. This is up to you, however, you must have printouts to the console showing that the operations are correct.
-** For example, you might write
 
-[source, c++]
-——
-Money m(100,10);
-Money n(100,10);
-if(m > n){
-     // print something
-} else // etc.
-——
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
