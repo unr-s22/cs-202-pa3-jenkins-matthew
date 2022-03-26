@@ -1,23 +1,45 @@
 #ifndef MONEY_H
 #define MONEY_H
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <stdio.h>
+#include <vector>
 using namespace std;
 
 class Money {
     private:
-        int month;
-        int day;
+        const int m_dollars;
+        const int m_cents;
+        int compare;
     public:
-        Money(int m, int d) {
-            month = m;
-            day = d;
-        }
+        explicit Money(const int dollars, const int cents);
+        void printMoney(); 
+        float getMoney();
         friend ostream& operator << (ostream& os, const Money& moneyAmount);
+        void read() {
+            cin >> compare;
+            int operator < (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
+        }
+        int operator > (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
+        }
+        int operator == (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
+        }
+        }
 };
-ostream& operator << (ostream& os, const Money& moneyAmount) {
-    os << "$" << moneyAmount.month << "." << moneyAmount.day;
-    return os;
-}
+
 #endif //MONEY_H
 
 
@@ -43,4 +65,24 @@ $100.33
 ----
 
 _The external interface of the class must not expose the underlying cents variable directly._
+*/
+
+/*
+ int operator <= (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
+        }
+        int operator >= (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
+        }
+        int operator != (Money X) {
+            if (compare < X.compare)
+                return 1;
+            else    
+                return 0;
 */
