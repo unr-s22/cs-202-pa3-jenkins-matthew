@@ -1,43 +1,35 @@
 #ifndef MONEY_H
 #define MONEY_H
-#include <iostream>
 #include <string>
-#include <sstream>
+#include <iostream>
 #include <stdio.h>
 #include <vector>
+
 using namespace std;
 
 class Money {
     private:
-        const int m_dollars;
-        const int m_cents;
-        int compare;
+        double m_cents = 0;
+        int m_dollars = 0;
     public:
+        double amount = 0;
         explicit Money(const int dollars, const int cents);
-        void printMoney(); 
+        explicit Money(const int cents);
+        void printMoney();
         float getMoney();
-        friend ostream& operator << (ostream& os, const Money& moneyAmount);
-        void read() {
-            cin >> compare;
-            int operator < (Money X) {
-            if (compare < X.compare)
-                return 1;
-            else    
-                return 0;
+        Money& operator-=(const Money& money) {
+            this -> m_cents -= money.m_cents;
+            return *this;
         }
-        int operator > (Money X) {
-            if (compare < X.compare)
-                return 1;
-            else    
-                return 0;
-        }
-        int operator == (Money X) {
-            if (compare < X.compare)
-                return 1;
-            else    
-                return 0;
-        }
-        }
+        friend ostream& operator << (ostream& os, const Money& money);
+        friend bool operator < (const Money& m, const Money& n);
+        friend bool operator > (const Money& m, const Money& n);
+        friend bool operator <= (const Money& m, const Money& n);
+        friend bool operator >= (const Money& m, const Money& n);
+        friend bool operator == (const Money& m, const Money& n);
+        friend bool operator != (const Money& m, const Money& n);
+
+
 };
 
 #endif //MONEY_H
