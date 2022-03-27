@@ -1,11 +1,10 @@
-#Created on 3/15/22
-CC=g++
-CFLAGS=-c -Wall
-pa3:main.cpp Account.o Money.o
-	$(CC) main.cpp Account.o Money.o -o pa3
-Account.o:Account.cpp Account.h
-	$(CC) $(CFLAGS) Account.cpp
-Money.o:Money.cpp Money.h
-	$(CC) $(CFLAGS) Money.cpp
+pa3: main.o Money.o Account.o 
+	g++ -std=c++11 -o pa3 main.o Money.o Account.o 
+main.o: main.cpp
+	g++ -std=c++11 -c main.cpp
+Money.o: Money.cpp
+	g++ -std=c++11 -c Money.cpp
+Account.o: Account.cpp
+	g++ -std=c++11 -c Account.cpp
 clean:
-	rm -rf *.o pa3 
+	rm *.o 
