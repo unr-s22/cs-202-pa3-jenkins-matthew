@@ -16,9 +16,6 @@ class Account {
 private:
 	int amountDeposits = 0;
 	int amountWithDrawals = 0;
-	int numd = 0;
-	int numw = 0;
-	string check[100];
 	vector<Money> money;
 	stringstream deposits, withdrawals;
 public:

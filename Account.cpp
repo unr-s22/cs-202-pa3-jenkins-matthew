@@ -11,8 +11,7 @@ void Account::makeDeposit(Money m){
 	amountDeposits += 1;
 	money[0] += m;
 	money.push_back(m);
-	numd++;
-	deposits << "(" << numd << ") ";
+	deposits << "(" << amountDeposits << ") ";
 	deposits << m << endl;
 }
 
@@ -21,8 +20,7 @@ void Account::makeWithDrawal(Money m){
 	amountWithDrawals += 1;
 	money[0] -= m;
 	money.push_back(m);
-	numw++;
-	withdrawals << "(" << numw << ")";
+	withdrawals << "(" << amountWithDrawals << ")";
 	withdrawals << m << endl;
 }
 
