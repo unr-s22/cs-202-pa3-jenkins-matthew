@@ -20,7 +20,6 @@ private:
 	int numw = 0;
 	string check[100];
 	vector<Money> money;
-	vector<Money> total;
 	stringstream deposits, withdrawals;
 public:
 	Account(Money);

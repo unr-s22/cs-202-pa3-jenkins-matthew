@@ -33,11 +33,11 @@ ostream& operator<<(ostream& output, const Account& account){
 	output << "--------------------------" << endl;
 	output << "Number of Deposits: " << account.amountDeposits << endl;
 	output << "--------------------------" << endl;
-	output << account.deposits.str() << endl;
+	output << account.deposits.str();
 	output << "--------------------------" << endl;
 	output << "Number of Withdrawals: " << account.amountWithDrawals << endl;
 	output << "--------------------------" << endl;
-	output << account.withdrawals.str() << endl;
+	output << account.withdrawals.str();
 
 	return output;
 };
