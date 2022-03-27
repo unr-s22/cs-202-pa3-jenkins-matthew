@@ -10,13 +10,14 @@ using namespace std;
 class Money {
     private:
         double m_cents = 0;
-        int m_dollars = 0;
     public:
-        double amount = 0;
         explicit Money(const int dollars, const int cents);
         explicit Money(const int cents);
-        void printMoney();
-        float getMoney();
+	Money& operator +=(const Money& money) {
+		this-> m_cents += money.m_cents;
+		return *this;	
+	}
+	
         Money& operator-=(const Money& money) {
             this -> m_cents -= money.m_cents;
             return *this;

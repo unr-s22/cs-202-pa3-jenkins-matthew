@@ -28,9 +28,9 @@ int main() {
 	cout << account << endl;
 	//Code to verify that the relational operators are working correctly
 	if(m > a){
-		cout << m << "is greater than " << a << endl;
+		cout << m << " is greater than " << a << endl;
 	} else {
-		cout << m << "is not greater than " << a << endl;
+		cout << m << " is not greater than " << a << endl;
 	}
 	
 	if(m < a){
